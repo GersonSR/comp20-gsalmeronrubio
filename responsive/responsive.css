@@ -1,0 +1,42 @@
+@media screen 
+  and (min-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+	.homer {
+		width: 312px;
+		height: 312px;
+		background:url(homer.jpg) 0 0px;
+	}
+}
+
+@media screen 
+  and (min-device-width: 800px) 
+  and (max-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+	.homer {
+		width: 312px;
+		height: 312px;
+		background:url(homer.jpg) 312px 0;
+	}
+}
+
+@media screen 
+  and (min-device-width: 400px) 
+  and (max-device-width: 800px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+	.homer {
+		width: 312px;
+		height: 312px;
+		background:url(homer.jpg) 0 -312px;
+	}
+}
+
+@media screen  
+  and (max-device-width: 400px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+	.homer {
+		width: 312px;
+		height: 312px;
+		background:url(homer.jpg) 312px -312px;
+	}
+}
+
