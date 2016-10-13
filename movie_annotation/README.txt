@@ -5,11 +5,9 @@ October 12th, 2016
 
 Implemented
 --------------------------------
-An index.html file was created which contains the content
-of a video and a div that holds the text that would be the
-annotation for the video. Th implimented tags follow the timing
-of when the characters say them in the video, JavaScript was
-used to create this based on the time of the video. Simple CSS
+Using Javascript, I was able to impliment movie quotes on a short clip
+that would appear appropietly depending on the time on the media, which in
+this case was the short clip from a classic movie. Simple CSS
 was added to edit and ease the view of the page and the 
 movie quotes.
 
