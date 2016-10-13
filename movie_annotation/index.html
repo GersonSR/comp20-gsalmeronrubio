@@ -18,7 +18,7 @@
 	var video = document.getElementById("classic_video");
 	var caption = document.getElementById("movie_quotes");
 	
-	video.addEventListener("quotes", function() {
+	video.addEventListener("timeupdate", function() {
 		if (video.currentTime > 24 && video.currentTime < 26) {
 			caption.innerHTML = "<p>Igor: DR. FRANKENSTEIN?!?!?</p>";
 		}
@@ -28,10 +28,10 @@
 		else if (video.currentTime > 34 && video.currentTime < 36) {
 			caption.innerHTML = "<p>Igor: You're putting me on.</p>";
 		}
-		else if (video.currentTime > 37 && video.currentTime < 40) {
+		else if (video.currentTime > 36.5 && video.currentTime < 39.5) {
 			caption.innerHTML = '<p>Dr. Frederick Frankenstein: No, it pronounced,"Frokensteen".</p>';
 		}
-		else if (video.currentTime > 40.5 && video.currentTime < 42) {
+		else if (video.currentTime > 40 && video.currentTime < 42) {
 			caption.innerHTML = "<p>Igor: Do you also say Froaderick?</p>";
 		}
 		else if (video.currentTime > 42.5 && video.currentTime < 44) {
@@ -41,15 +41,15 @@
 			caption.innerHTML = "<p>Igor: Well, why isn't it 'Froaderick Frokensteen'?</p>";
 		}
 		else if (video.currentTime > 47.5 && video.currentTime < 50) {
-			caption.innerHTML = '<p>Dr. Frederick Frankenstein: It isn't, it's "Frederick Frokensteen"</p>';
+			caption.innerHTML = '<p>Dr. Frederick Frankenstein: It isn\'t, it\'s "Frederick Frokensteen"</p>';
 		}
-		else if (video.currentTime > 50.5 && video.currentTime < 51) {
+		else if (video.currentTime > 50 && video.currentTime < 51.5) {
 			caption.innerHTML = "<p>Igor: I see.</p>";
 		}
-		else if (video.currentTime > 51.2 && video.currentTime < 52.5) {
+		else if (video.currentTime > 52 && video.currentTime < 53) {
 			caption.innerHTML = "<p>Dr. Frederick Frankenstein: You must be Igor. [He pronounces it ee-gor.]</p>";
 		}
-		else if (video.currentTime > 53 && video.currentTime < 56) {
+		else if (video.currentTime > 53.5 && video.currentTime < 56) {
 			caption.innerHTML = '<p>Igor: No, it\'s pronounced "eye-gor."</p>';
 		}
 		else if (video.currentTime > 57 && video.currentTime < 58) {
@@ -64,19 +64,18 @@
 		else if (video.currentTime > 64.5 && video.currentTime < 68) {
 			caption.innerHTML = "<p>Igor: Yes. My grandfather used to work for your grandfather.</p>";
 		}
-		else if (video.currentTime == 72) {
+		else if (video.currentTime > 70 && video.currentTime < 71 ) {
 			caption.innerHTML = "<p>Dr. Frederick Frankenstein: How nice.</p>";
 		}
 		else if (video.currentTime > 73 && video.currentTime < 74) {
 			caption.innerHTML = "<p>Igor: Of course the rates have gone up.</p>";
 		}
-		else if (video.currentTime > 74.5 && video.currentTime < 89) {
+		else if (video.currentTime > 74.5 && video.currentTime < 88.5) {
 			caption.innerHTML = "<p>Dr. Frederick Frankenstein: Of course, of course, I'm sure we'll get along splendidly. Oh, I uh, you know I don't mean to embarrass you, but I'm rather a brilliant surgeon. Perhaps I can help you with that hump.</p>";
 		}
-		else if (video.currentTime > 90 && video.currentTime < 92) {
+		else if (video.currentTime > 89 && video.currentTime < 92) {
 			caption.innerHTML = "<p>Igor: What hump?</p>";
 		}
-
 	}, false);
 </script>
 </body>
