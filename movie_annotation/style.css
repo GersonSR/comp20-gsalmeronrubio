@@ -2,17 +2,20 @@ body {
 	background: black;
 }
 
-.title {
+#title {
 	text-align: center;
 	color: #009933;
+	font-weight: bold;
 }
 
-.movie_quotes {
+#movie_quotes {
 	text-align: center;
 	color: #ffff00;
+	font-weight: bold;
+	font-size: 20px;
 }
 
-.classic_video {
+#classic_video {
 	display: block;
     margin: 0 auto;
 }

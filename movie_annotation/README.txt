@@ -1,7 +1,7 @@
 README 
 Lab: Movie Annotation
 Gerson Salmeron Rubio 
-October 13th, 2016
+October 12th, 2016
 
 Implemented
 --------------------------------
@@ -17,7 +17,7 @@ Acknowledgments
 --------------------------------
 Most of the help recieved was from Jeremy Su along with the 
 provided examples from class and the double rainbow example.
-I also searched on Stack Overflow to center a video.
+I also searched on Stack Overflow how to center a video.
 
 Time Spent
 --------------------------------
