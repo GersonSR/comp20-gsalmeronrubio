@@ -2,9 +2,11 @@ var Lat = 0;
 var Lng = 0;
 var request = new XMLHttpRequest();
 var client = new google.maps.LatLng(Lat, Lng);
+
 var mapOptions = {
-	center: client,
 	zoom: 15,
+	center: client,
+	mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 
 var map;
@@ -12,15 +14,15 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 		
 function init() {
-	map = new google.maps.Map(document.getElementById("google_map"), myOptions);
+	map = new google.maps.Map(document.getElementById("google_map"), mapOptions);
 	getMyLocation();
 }
 
 function getMyLocation() {
 if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 	navigator.geolocation.getCurrentPosition(function(position) {
-		myLat = position.coords.latitude;
-		myLng = position.coords.longitude;
+		Lat = position.coords.latitude;
+		Lng = position.coords.longitude;
 		renderMap();
 	});
 }
@@ -30,14 +32,14 @@ else {
 }
 
 function renderMap() {
-	me = new google.maps.LatLng(myLat, myLng);
+	client = new google.maps.LatLng(Lat, Lng);
 	// Update map and go there...
-	map.panTo(me);
+	map.panTo(client);
 	
 	// Create a marker
 	marker = new google.maps.Marker({
-		position: me,
-		title: "Here I Am!"
+		position: client,
+		title: "MAP DATA HERE"
 	});
 
 	marker.setMap(map);
