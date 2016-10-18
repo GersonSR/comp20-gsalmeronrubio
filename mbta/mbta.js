@@ -32,6 +32,7 @@ else {
 }
 
 function renderMap() {
+
 	client = new google.maps.LatLng(Lat, Lng);
 	var South_Station = new google.maps.LatLng(42.352271, -71.05524200000001);
 	var Andrew = new google.maps.LatLng(42.330154, -71.057655);
@@ -58,6 +59,34 @@ function renderMap() {
 
 	map.panTo(client);
 	
+	var StationCoords = [
+	Alewife,
+	Davis,
+	Porter_Square,
+	Harvard_Square,
+	Central_Square,
+	Kendall_MIT,
+	Charles_MGH,
+	Park_Street,
+	Downtown_Crossing,
+	South_Station,
+	Broadway,
+	Andrew,
+	JFK_UMass,
+	North_Quincy,
+	Wollaston,
+	Quincy_Center,
+	Quincy_Adams,
+	Braintree
+ 	];
+
+ 	var StationCoords2 = [
+	JFK_UMass,
+	Savin_Hill,
+	Fields_Corner,
+	Shawmut,
+	Ashmont,
+ 	];
 	
 	marker = new google.maps.Marker({
 		position: client,
@@ -177,6 +206,7 @@ function renderMap() {
 	marker.setMap(map);
 	South_Station_m.setMap(map);
 	Andrew_m.setMap(map);
+	Porter_Square_m.setMap(map);
 	Harvard_Square_m.setMap(map);
 	JFK_UMass_m.setMap(map);
 	Savin_Hill_m.setMap(map);
@@ -190,14 +220,32 @@ function renderMap() {
 	Charles_MGH_m.setMap(map);
 	Downtown_Crossing_m.setMap(map);
 	Quincy_Center_m.setMap(map);
-	Quincy_Center_m.setMap(map);
+	Quincy_Adams_m.setMap(map);
 	Ashmont_m.setMap(map);
 	Wollaston_m.setMap(map);
 	Fields_Corner_m.setMap(map);
 	Central_Square_m.setMap(map);
 	Braintree_m.setMap(map);
 
-				
+  	var flightPath = new google.maps.Polyline({
+    	path: StationCoords,
+    	geodesic: true,
+    	strokeColor: '#FF0000',
+    	strokeOpacity: 1.0,
+    	strokeWeight: 2
+  	});
+
+  	var flightPath2 = new google.maps.Polyline({
+    	path: StationCoords2,
+    	geodesic: true,
+    	strokeColor: '#FF0000',
+    	strokeOpacity: 1.0,
+    	strokeWeight: 2
+  	});
+
+	flightPath.setMap(map);
+	flightPath2.setMap(map);
+
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
