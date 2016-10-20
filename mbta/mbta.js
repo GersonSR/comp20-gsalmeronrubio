@@ -9,7 +9,6 @@ function loadRedLine() {
 		if (request.readyState == 4 && request.status == 200) {
 			data = request.responseText;
 			RedLine = JSON.parse(data);
-//			console.log("DATA SET")
 		}
 		else if (request.readyState == 4 && request.status != 200) {
 			loadRedLine();
