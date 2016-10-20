@@ -362,7 +362,7 @@ function renderMap() {
   	var closestPath = new google.maps.Polyline({
     	path: closest_station,
     	geodesic: true,
-    	strokeColor: '#FF0000',
+    	strokeColor: '#578FDA',
     	strokeOpacity: 1.0,
     	strokeWeight: 2
   	});
