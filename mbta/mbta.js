@@ -9,7 +9,7 @@ function loadRedLine() {
 		if (request.readyState == 4 && request.status == 200) {
 			data = request.responseText;
 			RedLine = JSON.parse(data);
-			console.log("DATA SET")
+//			console.log("DATA SET")
 		}
 		else if (request.readyState == 4 && request.status != 200) {
 			loadRedLine();
@@ -51,14 +51,21 @@ else {
 }
 
 function station_content(station_marker) {
-	newHTML = "";
+	var newHTML = "";
 	newHTML = '<p>' + station_marker.title + '</p>';
 	for(var count = 0; count < 	RedLine["TripList"]["Trips"].length; count++) {
 		var Trips = RedLine["TripList"]["Trips"];
 		for(var T_count = 0; T_count < Trips[count].Predictions.length; T_count++) {
 			var Stops = Trips[count].Predictions;
 			if(Stops[T_count].Stop == station_marker.title) {
-				newHTML += '<p>' + "Next Train in: " + Stops[T_count].Seconds + '</p>';
+				var time = Stops[T_count].Seconds ;
+				var time = time / 60;
+				if (time < 1) {
+					newHTML += '<p>' + "A Train is coming in: " + Stops[T_count].Seconds + " Seconds" + '</p>';
+				}
+				else {
+					newHTML += '<p>' + "A Train is coming in: " + Math.round(time) + " Minutes" + '</p>';
+				}
 			}
 		}
 	}
