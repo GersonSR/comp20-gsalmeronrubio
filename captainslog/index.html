@@ -8,13 +8,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
+		updateLog();
 		$(document).keypress(function(e) {
     		if(e.which == 13) {
         		txt = $("#msg").val();
-				localStorage[new Date().getTime()] = txt;
+        		now = new Date();
+        		now_utc = new Date(now.getUTCDate(), now.getUTCMonth(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCFullYear());
+				localStorage[now_utc] = txt;
+				updateLog();
    			}
 		});
 	});
+
+	function updateLog() {
+		output = "";
+		for (key in localStorage) {
+			now = key;
+			output = output + "<p>" + now + " - " + localStorage[key] + "</p>\n";
+		}
+		$("#log").html(output); 
+	}
 	</script>
 </head>
 
