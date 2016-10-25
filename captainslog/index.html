@@ -12,19 +12,17 @@
 		$(document).keypress(function(e) {
     		if(e.which == 13) {
         		txt = $("#msg").val();
-        		now = new Date();
-        		now_utc = new Date(now.getUTCDate(), now.getUTCMonth(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCFullYear());
+        		now_utc = new Date().toUTCString();
 				localStorage[now_utc] = txt;
 				updateLog();
    			}
 		});
 	});
-
 	function updateLog() {
 		output = "";
 		for (key in localStorage) {
 			now = key;
-			output = output + "<p>" + now + " - " + localStorage[key] + "</p>\n";
+			output = "<p>" + now + " - " + localStorage[key] + "</p>\n" + output;
 		}
 		$("#log").html(output); 
 	}
