@@ -4,7 +4,7 @@ var Lng = 0;
 var request
 function loadRedLine() {
 	request = new XMLHttpRequest();
-	request.open("get", "https://rocky-taiga-26352.herokuapp.com/redline.json", true);
+	request.open("get", "https://stormy-reef-94850.herokuapp.com/redline.json", true);
 	request.onreadystatechange = function schedule () {
 		if (request.readyState == 4 && request.status == 200) {
 			data = request.responseText;
