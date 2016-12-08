@@ -7,11 +7,11 @@
 <body>
  
  <h2>Introduction</h2>
- 	<p>Here would be the Introduction.</p>
+ 	<p>TThis will be going over web services provided for the storage of data for a 2048 game provided by the client. Specifically I would be focusing on the server side of this application, which would provide mainly 3 different services. THe web application would store the user's username, score, grid and the date the created user object. Another service that will be provided would be not only a list of scores for all users, but will also be able to provided a list for each individual user, where they can see only their scores. I mainly focused on the transfer of data and how exactly the service dealt with different types of data and controlling user parameter manipulation.</p>
  <h2>Methodology</h2>
- 	<p>Here is the Metholodogy.</p>
+ 	<p>Mostly the tools I went about using to manipulate the data was PostMan app on Google Chrome. Other than that it was simple input into the user prompt box. How I went about using PostMan was being able to send different types of parameters with different types of script commamnds in the different parameter boxes and saw how the server dealt with this data by attempting to access this data. I was able to see these different data inputs stack up when I called the '/' page and saw how each was executed and the order they were executed. I was also able to seperate the different types of data to test how the server dealt with data being passed in the user parameter, the score parameter and the grid parameter by calling different '/score,json?' uri.</p>
  <h2>Abstract of Findings</h2>
- 	<p>Abstract of Findings here.</p>
+ 	<p>At last and overall most of the problems with the server that I found was that when the user manipulated the data being sent to the server, the server trusted the user that this data would be correct and stored it as is. This is wrong and should be fixed since this would allow for attacks on other users when this data is shown to others through a browser.</p>
  <h2>Issues Found</h2>
  	<h3>Issue Found: #1</h3>
  	<ul>
@@ -47,6 +47,6 @@
 		<li>Resolution:Similar to the others, ensure that the data sent by the user is the correct grid data. For this ensuring lenght will be difficult, but can avoid script manipulating by changing < and > to their non-malicious equivalent.</li>
 	</ul>
  <h2>Conclusion</h2>
- 	<p>Here is the conclusion.</p>
+ 	<p>The fixes for the issues that I was able to find are simple fixes that will be able to be solved by adding extra lines of codes to the different areas where the data is taken in by the server. Ensure in the future whenever there are more areas wher there is input taken from the user, don't trust their input and attempt to sanitize the data.</p>
 </body>
 </html>
