@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Security</title>
+</head>
+<body>
+ 
+ <h2>Introduction</h2>
+ 	<p>Here would be the Introduction.</p>
+ <h2>Methodology</h2>
+ 	<p>Here is the Metholodogy.</p>
+ <h2>Abstract of Findings</h2>
+ 	<p>Abstract of Findings here.</p>
+ <h2>Issues Found</h2>
+ 	<h3>Issue Found: #1</h3>
+ 	<ul>
+		<li>Issue:Cross-Side Scripting through username box</li>
+		<li>Location:When the box prompting for username shows up.</li>
+		<li>Severity:HIGH. This allows for a scripting attack to be able to be done to all users who will be attempting to access the '/' page to see the previous scores.</li>
+		<li>Descritpion of Issue:When a user inputs their username into the box prompting for their username, there is not limit for what can be put, so once the name is put, when the '/' tries to render the page with all the scores, it reads the name as an actual script command.</li>
+		<li><img src="username.png" alt="Location of Vulnerability" style="width:350px;height:200px;"></img></li>
+		<li>Proof of Vulnerability:</li>
+		<li><img src="ScriptFromUserName.gif" alt="Proof" style="width:700px;height:400px;"></img></li>
+		<li>Resolution:Two different ways this can be solved. One would be to limit the length of a username to a length short enough where no damage can be done, along with replacing < and > so they would not be able to run </li>
+	</ul>
+	 <h3>Issue Found: #2</h3>
+ 	<ul>
+		<li>Issue:Cross Side Scripting through the score parameter</li>
+		<li>Location:This occurs when attempting to display the score of a user.</li>
+		<li>Severity:High. This is a Cross Side scripting attack, which would allow for manipulation of other clients by manipulating the manner in which a browser interprets data, since it would read the score, which should be a series of numbers, to be an actual script command.</li>
+		<li>Descritpion of Issue:The score parameter is taken as is, and nothing is done to ensure the data is simply number from the 2048 game, which is assuming to much of the user to not manipulate this parameter.</li>
+		<li><img src="score.png" alt="Location of Vulnerability" style="width:550px;height:300px;"></img></li>
+		<li>Proof of Vulnerability:</li>
+		<li><img src="score.gif" alt="Proof" style="width:700px;height:400px;"></img></li>
+		<li>Resolution:Similar to the previous, it would be best to ensure that the data is taken in for the score parameter to be simply numbers, and also to ensure a length and to change the < and > to their HTML opposite.</li>
+	</ul>
+	<h3>Issue Found: #3</h3>
+	 <ul>
+		<li>Issue:Cross Side Scripting through the grid parameter</li>
+		<li>Location:This occurs when attempting to display a user's score, can only be done by manipulating the grid parameter being sent to the user.</li>
+		<li>Severity:High. Just as the other Cross Side Scripting issues, this issues shares the fact that the host trusts the user to send the appropriate grid data to the server. This can be taken advantage of by anyone who wants to send a manipulative and malicious score to other users.</li>
+		<li>Descritpion of Issue:The grid issues is </li>
+		<li><img src="grid.png" alt="Location of Vulnerability" style="width:550px;height:300px;"></img></li>
+		<li>Proof of Vulnerability:</li>
+		<li><img src="grid.gif" alt="Proof" style="width:700px;height:400px;"></img></li>
+		<li>Resolution:Similar to the others, ensure that the data sent by the user is the correct grid data. For this ensuring lenght will be difficult, but can avoid script manipulating by changing < and > to their non-malicious equivalent.</li>
+	</ul>
+ <h2>Conclusion</h2>
+ 	<p>Here is the conclusion.</p>
+</body>
+</html>
